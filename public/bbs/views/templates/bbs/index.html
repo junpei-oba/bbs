@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+{literal}
+div.allbbs {
+  width:800px;
+  border:1px solid #888888;
+  margin:5px 0 0 0;
+  padding:10px;
+  background-color:#FFEEFF;
+}
+form {
+  display:inline;
+  margin:0;
+  padding:0;
+}
+{/literal}
+
+
+</style>
+</head>
+<body>
+  <h1>掲示板</h1>
+
+  <form method="post" action="/Bbs/regist">
+  タイトル<br /><input type="text" name="title" size="50" /><br />
+  本文<br /><textarea name="body" cols="50" rows="8" placeholder="投稿内容"></textarea><br />
+  <input type="submit" value="投稿"><br />
+  </form>
+  <h2>過去投稿一覧</h2><br />
+  <div class="allbbs">
+  {foreach $bbsdata as $data}
+    {$data.title}<br />
+    {$data.body}<br /><br />
+  {/foreach}
+  </div>
+
+</body>
+</html>
